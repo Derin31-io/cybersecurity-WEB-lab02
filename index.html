@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Резюме - Висоцького Дениса</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-    <h1> Денис Висоцький </h1>>
+<header class="site-header">
+    <h1> Денис Висоцький </h1>
     <p> Студент спеціальності "Кібербезпека" </p>
     <p> CV повністю вигадане</p>
+    <!-- Перемикач денної / нічної теми -->
+    <button type="button" id="theme-toggle" class="btn">🌙 Нічна тема</button>
 </header>
 <main>
     <section>
@@ -44,12 +48,48 @@
             <li>Сканування на вразливості та мапінг мережі (Nmap, Metasploit)</li>
         </ul>
     </section>
+    <!-- Відгуки роботодавців (завантажуються з JSONPlaceholder, варіант 4) -->
+    <section id="reviews">
+        <h2>Відгуки попередніх роботодавців</h2>
+        <p id="reviews-status">Завантаження відгуків...</p>
+        <div id="reviews-list" class="reviews-list"></div>
+    </section>
 </main>
-<footer>
+<footer class="footer">
     <h2>Контакти</h2>
     <p>Email: <a href="mailto:denys.vysotskyi.kb.2025@lpnu.ua">denys.vysotskyi.kb.2025@lpnu.ua</a></p>
     <p>GitHub: <a href="https://github.com/Derin31-io/" target="_blank">Мій профіль GitHub</a></p>
+
+    <!-- Дані з localStorage (інформація про ОС та браузер) -->
+    <div class="system-info">
+        <h3>Інформація про систему (з localStorage)</h3>
+        <ul id="system-info-list"></ul>
+    </div>
 </footer>
 
+<!-- Модальне вікно з формою зворотного зв'язку -->
+<div id="feedback-modal" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button type="button" id="modal-close" class="modal-close" aria-label="Закрити">&times;</button>
+        <h2 id="modal-title">Зворотний зв'язок</h2>
+        <form action="https://formspree.io/f/xdeelpan" method="POST">
+            <label>Ім’я
+                <input type="text" name="name" required>
+            </label>
+            <label>Email
+                <input type="email" name="email" required>
+            </label>
+            <label>Номер телефону
+                <input type="tel" name="phone" placeholder="+380XXXXXXXXX" required>
+            </label>
+            <label>Повідомлення
+                <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button type="submit" class="btn">Надіслати</button>
+        </form>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

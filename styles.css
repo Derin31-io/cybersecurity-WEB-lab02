@@ -1,0 +1,267 @@
+/* Базові налаштування */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    font-family: Arial, sans-serif;
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Селектор тегу */
+h2 {
+    margin-top: 0;
+    color: #0f766e;
+}
+
+/* Селектор ID */
+#top {
+    border-top: 5px solid #0f766e;
+}
+
+/* Селектор класу */
+.site-header {
+    background-color: white;
+    text-align: center;
+    padding: 24px;
+    margin-bottom: 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+}
+
+/* Flexbox для меню */
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.navigation a {
+    display: inline-block;
+    padding: 10px 14px;
+    color: #0f766e;
+    background-color: white;
+    border: 1px solid #99f6e4;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* Псевдоклас: наведення миші */
+.navigation a:hover {
+    background-color: #ccfbf1;
+}
+
+/* Псевдоклас: натискання */
+.navigation a:active {
+    transform: translateY(1px);
+}
+
+/* Селектор атрибута */
+a[href^="https"] {
+    font-weight: bold;
+}
+
+/* CSS Grid для розташування блоків */
+.page-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Стилізація блоків */
+.card {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+}
+
+/* Псевдоклас для списку */
+li:nth-child(odd) {
+    color: #0f766e;
+}
+
+/* Поле введення */
+input {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+}
+
+/* Псевдоклас для поля у фокусі */
+input:focus {
+    outline: 2px solid #14b8a6;
+    border-color: #0f766e;
+}
+
+/* Нижня частина сторінки */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 16px;
+}
+
+/* ===== Лабораторна №4 ===== */
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Кнопки */
+.btn {
+    padding: 10px 16px;
+    font-size: 15px;
+    color: white;
+    background-color: #0f766e;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #115e59;
+}
+
+/* Відгуки */
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.review h3 {
+    margin-top: 0;
+    text-transform: capitalize;
+}
+
+.review-email {
+    font-size: 14px;
+    color: #64748b;
+}
+
+/* Інформація про систему у футері */
+.system-info {
+    max-width: 800px;
+    margin: 20px auto 0;
+    text-align: left;
+    font-size: 14px;
+    word-break: break-word;
+}
+
+.system-info ul {
+    padding-left: 20px;
+}
+
+/* Модальне вікно */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: rgba(15, 23, 42, 0.6);
+    z-index: 100;
+}
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    padding: 24px;
+    background-color: white;
+    border-radius: 14px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 26px;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.modal label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px;
+    border: 1px solid #94a3b8;
+    border-radius: 8px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+/* Нічна тема */
+body.dark-mode {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-mode h2 {
+    color: #5eead4;
+}
+
+body.dark-mode a {
+    color: #93c5fd;
+}
+
+body.dark-mode li:nth-child(odd) {
+    color: #5eead4;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .card,
+body.dark-mode .modal {
+    background-color: #1e293b;
+    border-color: #334155;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    border-color: #475569;
+}
+
+/* Адаптація для вузьких екранів */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navigation a {
+        text-align: center;
+    }
+}
