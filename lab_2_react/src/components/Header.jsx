@@ -16,6 +16,10 @@ function Header({ theme, onToggleTheme }) {
             <p className="mt-3 text-base text-blue-100 sm:text-lg">
                 Студент спеціальності «Кібербезпека»
             </p>
+
+            <p className="mt-4 rounded-full bg-white/15 px-4 py-1 text-sm text-blue-50">
+                🚀 Сайт розгорнуто на Vercel
+            </p>
         </header>
     );
 }

@@ -214,6 +214,16 @@ textarea {
     resize: vertical;
 }
 
+/* Бейдж розгортання (лабораторна №5) */
+.deploy-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 14px;
+    color: #0f766e;
+    background-color: #ccfbf1;
+    border-radius: 999px;
+}
+
 /* Нічна тема */
 body.dark-mode {
     background-color: #0f172a;
